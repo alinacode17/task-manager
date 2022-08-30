@@ -5,7 +5,7 @@
       "name": "Onboarding Introduction",
       "subHeading": "A brief introduction to the tasks required.",
       "requiresSubmit": false,
-      "status": "completed",
+      "status": "instructions",
       "fields": [
         {
           "id": "1-1",
@@ -72,52 +72,44 @@
       "status": "open",
       "fields": [
         {
-          "id": "2-6",
-          "type": "paragraph",
-          "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero. ",
-          "size": {
-            "lg": 12,
-            "md": 12,
-            "sm": 12,
-            "xs": 12
-          }
-        },
-        {
-          "id": "2-7",
-          "type": "paragraph",
-          "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero. ",
-          "size": {
-            "lg": 12,
-            "md": 12,
-            "sm": 12,
-            "xs": 12
-          }
-        },
-        {
           "id": "2-1",
-          "type": "inputText",
-          "label": "first name",
-          "optional": false,
-          "validation": {
-            "min": 3,
-            "max": 300
-          },
+          "type": "paragraph",
+          "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero. ",
           "size": {
-            "lg": 4,
-            "md": 6,
-            "sm": 6,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
             "xs": 12
           }
         },
         {
           "id": "2-2",
-          "type": "inputText",
-          "label": "middle name",
+          "type": "text",
+          "label": "first name",
           "optional": false,
-          "validation": {
-            "min": 3,
-            "max": 300
-          },
+          "validationType": "string",
+          "validations": [
+            {
+              "type": "required",
+              "params": [
+                "this field is required"
+              ]
+            },
+            {
+              "type": "min",
+              "params": [
+                3,
+                "first name cannot be less than 3 characters"
+              ]
+            },
+            {
+              "type": "max",
+              "params": [
+                100,
+                "first name cannot be more than 100 characters"
+              ]
+            }
+          ],
           "size": {
             "lg": 4,
             "md": 6,
@@ -127,13 +119,32 @@
         },
         {
           "id": "2-3",
-          "type": "inputText",
-          "label": "surname",
+          "type": "text",
+          "label": "middle name",
+          "validationType": "string",
           "optional": false,
-          "validation": {
-            "min": 3,
-            "max": 300
-          },
+          "validations": [
+            {
+              "type": "required",
+              "params": [
+                "this field is required"
+              ]
+            },
+            {
+              "type": "min",
+              "params": [
+                3,
+                "middle name cannot be less than 3 characters"
+              ]
+            },
+            {
+              "type": "max",
+              "params": [
+                100,
+                "middle name cannot be more than 100 characters"
+              ]
+            }
+          ],
           "size": {
             "lg": 4,
             "md": 6,
@@ -143,14 +154,31 @@
         },
         {
           "id": "2-4",
-          "type": "inputDocument",
-          "label": "identity document",
+          "type": "select",
+          "label": "please select city",
           "optional": false,
-          "validation": {
-            "acceptType": "image"
-          },
+          "value": "",
+          "validationType": "string",
+          "options": [
+            {
+              "label": "Option 1",
+              "value": "option-1"
+            },
+            {
+              "label": "Option 2",
+              "value": "option-2"
+            }
+          ],
+          "validations": [
+            {
+              "type": "required",
+              "params": [
+                "city address is required"
+              ]
+            }
+          ],
           "size": {
-            "lg": 6,
+            "lg": 4,
             "md": 6,
             "sm": 6,
             "xs": 12
@@ -158,300 +186,22 @@
         },
         {
           "id": "2-5",
-          "type": "inputDocument",
-          "label": "liveness photo",
+          "type": "file",
+          "label": "copy of bill with address",
           "optional": false,
-          "validation": {
-            "acceptType": "image"
-          },
-          "size": {
-            "lg": 6,
-            "md": 6,
-            "sm": 6,
-            "xs": 12
-          }
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Address Validation",
-      "subHeading": "Provide valid proof of address",
-      "requiresSubmit": true,
-      "status": "open",
-      "fields": [
-        {
-          "id": "2-6",
-          "type": "paragraph",
-          "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero. ",
-          "size": {
-            "lg": 12,
-            "md": 12,
-            "sm": 12,
-            "xs": 12
-          }
-        },
-        {
-          "id": "2-7",
-          "type": "paragraph",
-          "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero. ",
-          "size": {
-            "lg": 12,
-            "md": 12,
-            "sm": 12,
-            "xs": 12
-          }
-        },
-        {
-          "id": "3-1",
-          "type": "inputText",
-          "label": "address line 1",
-          "optional": false,
-          "validation": {
-            "min": 3,
-            "max": 300
-          },
-          "size": {
-            "lg": 6,
-            "md": 6,
-            "sm": 6,
-            "xs": 12
-          }
-        },
-        {
-          "id": "3-2",
-          "type": "inputText",
-          "label": "address line 2",
-          "optional": false,
-          "validation": {
-            "min": 3,
-            "max": 300
-          },
-          "size": {
-            "lg": 6,
-            "md": 6,
-            "sm": 6,
-            "xs": 12
-          }
-        },
-        {
-          "id": "3-3",
-          "type": "inputText",
-          "label": "address line 3",
-          "optional": false,
-          "validation": {
-            "min": 3,
-            "max": 300
-          },
-          "size": {
-            "lg": 6,
-            "md": 6,
-            "sm": 6,
-            "xs": 12
-          }
-        },
-        {
-          "id": "3-4",
-          "type": "inputText",
-          "label": "city",
-          "optional": false,
-          "validation": {
-            "min": 3,
-            "max": 300
-          },
-          "size": {
-            "lg": 6,
-            "md": 6,
-            "sm": 6,
-            "xs": 12
-          }
-        },
-        {
-          "id": "3-5",
-          "type": "inputSelect",
-          "label": "country",
-          "optional": false,
-          "options": [
+          "validationType": "string",
+          "validations": [
             {
-              "value": "ie",
-              "label": "Ireland"
-            },
-            {
-              "value": "uk",
-              "label": "United Kingdom"
-            },
-            {
-              "value": "ro",
-              "label": "Romania"
+              "type": "required",
+              "params": [
+                "file is required"
+              ]
             }
           ],
           "size": {
             "lg": 6,
             "md": 6,
             "sm": 6,
-            "xs": 12
-          }
-        },
-        {
-          "id": "3-6",
-          "type": "inputDocument",
-          "label": "copy of bill with address",
-          "optional": false,
-          "validation": {
-            "acceptType": "image"
-          },
-          "size": {
-            "lg": 6,
-            "md": 6,
-            "sm": 6,
-            "xs": 12
-          }
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "name": "Financial Records",
-      "subHeading": "Provide details of financial transactions",
-      "requiresSubmit": true,
-      "status": "open",
-      "fields": [
-        {
-          "id": "2-6",
-          "type": "paragraph",
-          "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero. ",
-          "size": {
-            "lg": 12,
-            "md": 12,
-            "sm": 12,
-            "xs": 12
-          }
-        },
-        {
-          "id": "2-7",
-          "type": "paragraph",
-          "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero. ",
-          "size": {
-            "lg": 12,
-            "md": 12,
-            "sm": 12,
-            "xs": 12
-          }
-        },
-        {
-          "id": "4-1",
-          "type": "inputText",
-          "label": "bank address line 1",
-          "optional": false,
-          "validation": {
-            "min": 3,
-            "max": 300
-          },
-          "size": {
-            "lg": 6,
-            "md": 6,
-            "sm": 6,
-            "xs": 12
-          }
-        },
-        {
-          "id": "4-2",
-          "type": "inputText",
-          "label": "bank address line 2",
-          "optional": false,
-          "validation": {
-            "min": 3,
-            "max": 300
-          },
-          "size": {
-            "lg": 6,
-            "md": 6,
-            "sm": 6,
-            "xs": 12
-          }
-        },
-        {
-          "id": "4-3",
-          "type": "inputText",
-          "label": "bank address line 3",
-          "optional": false,
-          "validation": {
-            "min": 3,
-            "max": 300
-          },
-          "size": {
-            "lg": 6,
-            "md": 6,
-            "sm": 6,
-            "xs": 12
-          }
-        },
-        {
-          "id": "4-4",
-          "type": "inputText",
-          "label": "bank city",
-          "optional": false,
-          "validation": {
-            "min": 3,
-            "max": 300
-          },
-          "size": {
-            "lg": 6,
-            "md": 6,
-            "sm": 6,
-            "xs": 12
-          }
-        },
-        {
-          "id": "4-5",
-          "type": "inputSelect",
-          "label": "bank country",
-          "optional": false,
-          "options": [
-            {
-              "value": "ie",
-              "label": "Ireland"
-            },
-            {
-              "value": "uk",
-              "label": "United Kingdom"
-            },
-            {
-              "value": "ro",
-              "label": "Romania"
-            }
-          ],
-          "size": {
-            "lg": 6,
-            "md": 6,
-            "sm": 6,
-            "xs": 12
-          }
-        },
-        {
-          "id": "4-6",
-          "type": "inputDocument",
-          "label": "copy of bill with address",
-          "optional": false,
-          "validation": {
-            "acceptType": "pdf"
-          },
-          "size": {
-            "lg": 6,
-            "md": 6,
-            "sm": 6,
-            "xs": 12
-          }
-        },
-        {
-          "id": "4-7",
-          "type": "inputTextArea",
-          "label": "additional information",
-          "optional": true,
-          "size": {
-            "lg": 12,
-            "md": 12,
-            "sm": 12,
             "xs": 12
           }
         }
@@ -462,26 +212,15 @@
     {
       "id": 1,
       "name": "Onboarding Introduction",
-      "subHeading": "A brief introduction to the tasks required.",
-      "status": "completed"
+      "subHeading": "A brief introduction to the tasks required",
+      "status": "instructions"
     },
     {
       "id": 2,
       "name": "Identity Validation",
       "subHeading": "Provide valid photo identification",
       "status": "open"
-    },
-    {
-      "id": 3,
-      "name": "Address Validation",
-      "subHeading": "Provide valid proof of address",
-      "status": "open"
-    },
-    {
-      "id": 4,
-      "name": "Financial Records",
-      "subHeading": "Provide details of financial transactions",
-      "status": "open"
     }
-  ]
+  ],
+  "submittedFormData": []
 }

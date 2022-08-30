@@ -1,0 +1,48 @@
+.tasks {
+    padding: $r-spacing-20;
+
+    &__container {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+
+        @include breakpoint(md-above) {
+            flex-direction: row;
+        }
+    }
+
+    &__list {
+        width: 100%;
+
+        @include breakpoint(md-above) {
+            min-width: 400px;
+            max-width: 400px;
+            margin-right: $r-spacing-40;
+        }
+        
+        &-item {
+            cursor: pointer;
+            margin-bottom: $r-spacing-16;
+            padding: $r-spacing-16;
+            background-color: aliceblue;
+            transition: background-color 0.2s ease-in-out;
+
+            @include breakpoint(md-above) {
+                background-color: white;
+            }
+
+            &:hover {
+                background-color: $r-neutral-100;
+            }
+
+            &-status {
+                display: flex;
+                color: $r-unknown;
+            }
+
+            &-status--completed {
+                color: $r-ricetta;
+            }
+        }
+    }
+}

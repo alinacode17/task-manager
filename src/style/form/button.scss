@@ -1,0 +1,53 @@
+button {
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    line-height: 1;
+    min-width: 165px;
+    background-color: $r-orange;
+    color: white;
+    border-radius: 8px;
+    padding: 13px 30px;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+    text-decoration: none;
+
+    &:hover {
+        opacity: 0.7;
+        text-decoration: none;
+        color: white;
+    }
+
+    &--icon {
+        display: flex;
+        min-width: inherit;
+        background-color: transparent;
+        padding: 8px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease-in-out;
+
+        &:hover {
+            background-color: $r-neutral-200;
+        }
+
+        &:active {
+            border: 2px solid $r-neutral-700;
+        }
+
+        &--no-hover {
+            &:hover {
+                background-color: transparent;
+                opacity: 0.8;
+            }
+
+            &:active {
+                border: none;
+            }
+
+        }
+
+    }
+}

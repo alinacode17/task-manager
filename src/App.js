@@ -1,10 +1,12 @@
-import './App.css';
+import './App.scss';
+import TaskViewer from './components/TaskViewer';
+import { TaskViewerProvider } from './components/contexts/tasksContext';
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <TaskViewerProvider>
+      <TaskViewer />
+    </TaskViewerProvider>
   );
 }
 

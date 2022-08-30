@@ -1,5 +1,20 @@
+// base styles
+@import './style/normalize.scss';
+@import './style/variables.scss';
+@import './style/breakpoints.scss';
+
+
+// form
+@import './style/form/search.scss';
+@import './style/form/input.scss';
+@import './style/form/button.scss';
+@import './style/components/tasks.scss';
+
+
+
 .App {
   text-align: center;
+  font-size: 16px;
 }
 
 .App-logo {
